@@ -71,6 +71,31 @@
                     <span class="gentle-error" id="passwordError"></span>
                 </div>
 
+                <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault(); 
+
+            const usernameInput = document.getElementById("username").value.trim();
+            const passwordInput = document.getElementById("password").value.trim();
+
+            const alertBox = document.getElementById("alertBox");
+               if (usernameInput === "heri" && passwordInput === "123") {
+                
+                alert("Login Sukses! Selamat datang Heri.");
+                localStorage.setItem("username", usernameInput);
+                window.location.href = "index.html";
+                } else {
+                alertBox.innerText = "Username atau Password salah, silahkan coba lagi";
+                alertBox.style.display = "block";
+
+                setTimeout(() => {
+                    alertBox.style.display = "none";
+                }, 3000);
+            }
+        });
+    </script>
+
+                
                 <div class="mindful-options">
                     <label class="zen-checkbox">
                         <input type="checkbox" id="remember" name="remember">
