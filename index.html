@@ -24,7 +24,7 @@ https://templatemo.com/tm-593-personal-shape
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="login/login.html">Login</a></li>
+                <li><a href="login/login.html" id="authLink">Login</a></li>
             </ul>
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <div class="hamburger"></div>
@@ -41,7 +41,7 @@ https://templatemo.com/tm-593-personal-shape
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="login/login.html">login</a></li>
+            <li><a href="login/login.html" id="authLink">Login</a></li>
         </ul>
     </div>
 
@@ -253,5 +253,36 @@ https://templatemo.com/tm-593-personal-shape
 
 <script src="templatemo-personal-javascripts.js"></script>
  <script src="login/js/welcome.js"></script>
+
+    <script>
+    
+    const authLink = document.getElementById("authLink");
+
+   
+    const isLoggedIn = localStorage.getItem("username");
+
+    if (isLoggedIn) {
+        // JIKA SUDAH LOGIN:
+        authLink.innerText = "Logout"; 
+        authLink.href = "../index.html";           
+
+     
+        authLink.addEventListener("click", function(e) {
+            e.preventDefault(); // Mencegah link lompat ke atas halaman
+            
+          
+            localStorage.removeItem("username");
+            alert("Kamu berhasil logout!");
+            
+        
+            window.location.reload();
+        });
+        
+    } else {
+        authLink.innerText = "Login";
+        authLink.href = "login/login.html"; // Sesuaikan nama folder loginmu di sini
+    }
+</script>
+    
 </body>
 </html>
