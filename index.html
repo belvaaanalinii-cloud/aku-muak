@@ -20,11 +20,11 @@ https://templatemo.com/tm-593-personal-shape
         <div class="nav-container">
             <div class="logo">Kimia</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="login/login.html" id="authLink">Login</a></li>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#contact">Hubungi</a></li>
+                <li><a href="login/login.html" id="authLink">Masuk</a></li>
             </ul>
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <div class="hamburger"></div>
@@ -37,11 +37,11 @@ https://templatemo.com/tm-593-personal-shape
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="login/login.html" id="authLink">Login</a></li>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#portfolio">Portofolio</a></li>
+            <li><a href="#contact">Hubungi</a></li>
+            <li><a href="login/login.html" id="authLink">Masuk</a></li>
         </ul>
     </div>
 
@@ -268,25 +268,25 @@ https://templatemo.com/tm-593-personal-shape
     const isLoggedIn = localStorage.getItem("username");
 
     if (isLoggedIn) {
-        // JIKA SUDAH LOGIN:
-        authLink.innerText = "Logout"; 
+        
+        authLink.innerText = "Keluar"; 
         authLink.href = "../index.html";           
 
      
         authLink.addEventListener("click", function(e) {
-            e.preventDefault(); // Mencegah link lompat ke atas halaman
+            e.preventDefault(); 
             
           
             localStorage.removeItem("username");
-            alert("Kamu berhasil logout!");
+            alert("Kamu berhasil keluar!");
             
         
             window.location.reload();
         });
         
     } else {
-        authLink.innerText = "Login";
-        authLink.href = "login/login.html"; // Sesuaikan nama folder loginmu di sini
+        authLink.innerText = "Masuk";
+        authLink.href = "login/login.html"; 
     }
 </script>
     
