@@ -48,12 +48,12 @@
             <form class="harmony-form" id="loginForm" novalidate>
                 <div class="organic-field">
                     <div class="field-nature"></div>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                    <label for="email">Email Address</label>
+                    <input type="username" id="username" name="username" required autocomplete="username">
+                    <label for="email">Username</label>
                     <div class="growth-indicator">
                         <div class="leaf-sprout"></div>
                     </div>
-                    <span class="gentle-error" id="emailError"></span>
+                    <span class="gentle-error" id="usernameError"></span>
                 </div>
 
                 <div class="organic-field">
@@ -70,6 +70,52 @@
                     </button>
                     <span class="gentle-error" id="passwordError"></span>
                 </div>
+
+                 <script>
+
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+
+            e.preventDefault(); 
+
+
+
+            const usernameInput = document.getElementById("username").value.trim();
+
+            const passwordInput = document.getElementById("password").value.trim();
+
+
+
+            const alertBox = document.getElementById("alertBox");
+
+               if (usernameInput === "heri" && passwordInput === "123") {
+
+                
+
+                alert("Login Sukses! Selamat datang Heri.");
+
+                localStorage.setItem("username", usernameInput);
+
+                window.location.href = "../index.html";
+
+                } else {
+
+                alertBox.innerText = "Username atau Password salah, silahkan coba lagi";
+
+                alertBox.style.display = "block";
+
+
+
+                setTimeout(() => {
+
+                    alertBox.style.display = "none";
+
+                }, 3000);
+
+            }
+
+        });
+
+    </script>
 
                 <div class="mindful-options">
                     <label class="zen-checkbox">
