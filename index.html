@@ -22,10 +22,15 @@ https://templatemo.com/tm-593-personal-shape
             <ul class="nav-links">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#about">Tentang</a></li>
-                <li><a href="#portfolio">Portofolio</a></li>
-                <li><a href="#contact">Hubungi</a></li>
-                <li><a href="login/login.html" id="authLink">Masuk</a></li>
+               <li><a href="#portfolio">Portofolio</a></li>
+                <li><a href="#contact">Hubungi</a></li>       
+    <li id="loginMenu" ><a href="login/login.html">Masuk</a></li>
+    <li id="registerMenu"><a href="login/register.html">Daftar</a></li>
+    <li id="logoutMenu" style="display: none;"><a href="#" id="authLink">Keluar</a></li>
             </ul>
+
+
+            
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <div class="hamburger"></div>
                 <div class="hamburger"></div>
@@ -41,7 +46,10 @@ https://templatemo.com/tm-593-personal-shape
             <li><a href="#about">Tentang</a></li>
             <li><a href="#portfolio">Portofolio</a></li>
             <li><a href="#contact">Hubungi</a></li>
-            <li><a href="login/login.html" id="authLink">Masuk</a></li>
+            <li id="loginMenu" ><a href="login/login.html">Masuk</a></li>
+    <li id="registerMenu"><a href="login/register.html">Daftar</a></li>
+    
+    <li id="logoutMenu" style="display: none;"><a href="#" id="authLink">Keluar</a></li>
         </ul>
     </div>
 
@@ -260,35 +268,35 @@ https://templatemo.com/tm-593-personal-shape
 <script src="templatemo-personal-javascripts.js"></script>
  <script src="login/js/welcome.js"></script>
 
-    <script>
-    
+<script>
+    // 1. Ambil semua elemen menu berdasarkan ID
+    const loginMenu = document.getElementById("loginMenu");
+    const registerMenu = document.getElementById("registerMenu");
+    const logoutMenu = document.getElementById("logoutMenu");
     const authLink = document.getElementById("authLink");
 
-   
+    // 2. Cek apakah pengguna sudah login (ada data username di localStorage)
     const isLoggedIn = localStorage.getItem("username");
 
     if (isLoggedIn) {
-        
-        authLink.innerText = "Keluar"; 
-        authLink.href = "../index.html";           
+        // JIKA SUDAH LOGIN:
+        loginMenu.style.display = "none";    
+        registerMenu.style.display = "none"; 
+        logoutMenu.style.display = "block";  
 
-     
+        // Logika ketika tombol Keluar diklik
         authLink.addEventListener("click", function(e) {
             e.preventDefault(); 
             
-          
-            localStorage.removeItem("username");
+            localStorage.removeItem("username"); // Hapus data login
             alert("Kamu berhasil keluar!");
             
-        
-            window.location.reload();
+            // PERBAIKAN DI SINI: Langsung arahkan ke index.html utama
+            // Gunakan "/" jika index.html ada di folder paling luar (root)
+            window.location.href = "../index.html"; 
         });
-        
-    } else {
-        authLink.innerText = "Masuk";
-        authLink.href = "login/login.html"; 
+
     }
-</script>
     
 </body>
 </html>
