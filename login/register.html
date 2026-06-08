@@ -42,24 +42,24 @@
                     <div class="zen-glow"></div>
                 </div>
                 <h1>Buat Akun</h1>
-                <p>Begin your wellness journey</p>
+                <p>Isi Identitasmu</p>
             </div>
             
             <form class="harmony-form" id="registerForm" novalidate>
                 <div class="organic-field">
                     <div class="field-nature"></div>
-                    <input type="text" id="fullname" name="fullname" required autocomplete="name">
-                    <label for="fullname">Full Name</label>
+                    <input type="text" id="username" name="username" required autocomplete="name">
+                    <label for="username">Username</label>
                     <div class="growth-indicator">
                         <div class="leaf-sprout"></div>
                     </div>
-                    <span class="gentle-error" id="nameError"></span>
+                    <span class="gentle-error" id="usernameError"></span>
                 </div>
 
                 <div class="organic-field">
                     <div class="field-nature"></div>
                     <input type="email" id="email" name="email" required autocomplete="email">
-                    <label for="email">Email Address</label>
+                    <label for="email">Alamat Email</label>
                     <div class="growth-indicator">
                         <div class="leaf-sprout"></div>
                     </div>
@@ -90,13 +90,13 @@
                                 <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
-                        <span class="checkbox-text">I accept the terms & privacy</span>
+                        <span class="checkbox-text">Saya setuju aturan & ketentuan</span>
                     </label>
                 </div>
 
                 <button type="submit" class="harmony-button">
                     <div class="button-earth"></div>
-                    <span class="button-text">Join Sanctuary</span>
+                    <span class="button-text">Daftar</span>
                     <div class="button-growth">
                         <div class="growing-circle circle-1"></div>
                         <div class="growing-circle circle-2"></div>
@@ -140,8 +140,8 @@
             </div>
 
             <div class="nurture-signup">
-                <span>Already centered? </span>
-                <a href="#" class="growth-link">Return to sanctuary</a>
+                <span>Sudah Pernah Masuk? </span>
+                <a href="#" class="growth-link">Kembali ke web</a>
             </div>
 
             <div class="harmony-success" id="successMessage">
@@ -155,13 +155,14 @@
                         </svg>
                     </div>
                 </div>
-                <h3>Registration Complete</h3>
-                <p>Your journey has begun...</p>
+                <h3>Pendaftaran Berhasil</h3>
+                <p>Selamat Bergabung</p>
             </div>
         </div>
     </div>
 
     <script src="../../shared/js/form-utils.js"></script>
     <script src="script.js"></script>
+    <script src="login/js/register.js"></script>
 </body>
 </html>
