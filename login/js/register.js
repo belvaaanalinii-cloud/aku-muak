@@ -13,6 +13,18 @@ document.getElementById("registerForm").addEventListener("submit", async functio
         body: `action=register&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
     });
 
+    if (isFormValid) {
+               
+                registerForm.classList.add('is-submitting');
+
+                
+                const dataPendaftaran Baru = {
+                    username: usernameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    password: passwordInput.value
+                };
+
+        
     const data = await res.json();
 
     if (data.status === "success") {
