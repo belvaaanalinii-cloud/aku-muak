@@ -69,7 +69,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
             
             setTimeout(() => {
-                window.location.href = "/index.html";
+                window.location.href = "../../index.html";
             }, 2500);
 
         } else {
