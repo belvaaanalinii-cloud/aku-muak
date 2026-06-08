@@ -269,35 +269,34 @@ https://templatemo.com/tm-593-personal-shape
  <script src="login/js/welcome.js"></script>
 
 <script>
-    // 1. Ambil semua elemen menu berdasarkan ID
+    
     const loginMenu = document.getElementById("loginMenu");
     const registerMenu = document.getElementById("registerMenu");
     const logoutMenu = document.getElementById("logoutMenu");
     const authLink = document.getElementById("authLink");
 
-    // 2. Cek apakah pengguna sudah login (ada data username di localStorage)
+    
     const isLoggedIn = localStorage.getItem("username");
 
     if (isLoggedIn) {
-        // JIKA SUDAH LOGIN:
+        
         loginMenu.style.display = "none";    
         registerMenu.style.display = "none"; 
         logoutMenu.style.display = "block";  
 
         authLink.href = "../index.html";
         loginMenu.href ="../index.html";
+        registerMenu.href="../index.html";
         
-        // Logika ketika tombol Keluar diklik
         authLink.addEventListener("click", function(e) {
             e.preventDefault(); 
             
-            localStorage.removeItem("username"); // Hapus data login
+            localStorage.removeItem("username");
             alert("Kamu berhasil keluar!");
 
             window.location.reload();
             
-            // PERBAIKAN DI SINI: Langsung arahkan ke index.html utama
-            // Gunakan "/" jika index.html ada di folder paling luar (root)
+            
              
         });
 
