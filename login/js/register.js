@@ -52,6 +52,8 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
         // Tips: Menggunakan toLowerCase() berarti teks pembandingnya juga harus huruf kecil semua
         if (data.status === "success" || data.message?.toLowerCase().includes("berhasil")) {
+
+            localStorage.setItem("username", username);
             
             registerForm.style.opacity = '0';
             setTimeout(() => {
